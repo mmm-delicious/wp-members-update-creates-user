@@ -1,14 +1,16 @@
-
 <?php
 /**
  * Plugin Name: MMM Username Registration API
  * Description: Registers users via REST API for Elementor forms with WP-Members activation.
- * Version: 3.0
+ * Version: 3.1
  * Author: MMM Delicious
  * Developer: Mark McDonnell
+ * Requires at least: 5.0
+ * Requires PHP: 7.4
+ * Tested up to: 6.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 add_action('rest_api_init', function () {
     register_rest_route('mmm/v1', '/register', [
