@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP-Members Username API
  * Description: Registers users via REST API for Elementor forms with WP-Members activation.
- * Version: 3.2.4
+ * Version: 3.2.5
  * Author: MMM Delicious
  * Developer: Mark McDonnell
  * Requires at least: 5.0
@@ -19,7 +19,7 @@ $mmm_updater = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecke
     __FILE__,
     'wp-members-username-api'
 );
-$mmm_updater->setCheckPeriod(48);
+$mmm_updater->scheduler->checkPeriod = 48; // setCheckPeriod() not available in bundled PUC v5p6
 
 add_action('rest_api_init', function () {
     register_rest_route('mmm/v1', '/register', [
